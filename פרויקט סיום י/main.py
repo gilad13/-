@@ -265,7 +265,7 @@ with gr.Blocks() as app:
         ### Frequency Method
 
         #### Frequency Encryption  
-        In this encryption method, you provide a text and a key (integer between 0 and 26).  
+        In this encryption method, you provide a text and a key (integer between 0 and 13).  
         The duration of each character's sound is determined as follows:
         - Letter from the first 13 letters of the alphabet: 0.5 seconds  
         - Letter from the last 13 letters of the alphabet: 1 second  
@@ -307,7 +307,7 @@ with gr.Blocks() as app:
 
         #### Frequency Hack  
         The **Frequency Hack** function is used when the key to decrypt a frequency-based audio file is unknown.  
-        It works by trying all possible keys from **1 to 9**.
+        It works by trying all possible keys from **2 to 7 length**.
 
         For each key, the function attempts to decrypt the audio file and checks whether the resulting message is valid **English**.  
         The first valid result is returned along with the key that was used.
@@ -357,7 +357,7 @@ with gr.Blocks() as app:
 
     #### Pyramid Encryption  
     In this method, a **text message** and a **numeric key** are provided.  
-    The key must be **shorter than 10 digits** and must contain **all digits from 1 to the length of the key** in any order.  
+    The key must be **shorter than 8 digits** and must contain **all digits from 1 to the length of the key** in any order.  
     For example: `3124`, `263415`.
 
     The digits in the key are **mirrored**, key reversed in index values.  
@@ -416,7 +416,7 @@ with gr.Blocks() as app:
 
     #### Pyramid Hack  
     The **Pyramid Hack** function is used when the key to decrypt a pyramid-encrypted message is unknown.  
-    It works by trying all valid key permutations for key lengths from **2 to 9**.
+    It works by trying all valid key permutations for key lengths from **2 to 7**.
 
     For each key length, it generates all possible valid keys — each being a permutation of digits from 1 to the key length.  
     It then tries to decrypt the message with each key and checks whether the result is **valid English**.
