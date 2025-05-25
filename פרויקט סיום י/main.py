@@ -60,7 +60,7 @@ def validate_frequency_encrypt_inputs(text, key):
     """
     Validates inputs for Frequency encryption.
     text: The text to encrypt, must be a non-empty string.
-    key: The encryption key, expected to be convertible to integer between 0 and 25.
+    key: The encryption key, expected to be convertible to integer between 0 and 13.
     return: Tuple (bool valid, int key or error message string)
     """
     all_characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ !#$%&\'()*+,-./0123456789:;<=>?@[\\]^_`{|}~"
@@ -106,7 +106,7 @@ def validate_frequency_decrypt_inputs(audio_file, key):
     """
     Validates inputs for Frequency decryption.
     audio_file: Path to audio file, must exist and be a supported audio format.
-    key: Key to decrypt, must be integer between 0 and 25.
+    key: Key to decrypt, must be integer between 0 and 13.
     return: Tuple (bool valid, int key or error message string)
     """
     if audio_file is None:
@@ -187,7 +187,7 @@ def pyramid_encrypt_gui(text, key, user_state):
     """
     Encrypts text using the Pyramid method with a numeric key.
     text: The plaintext message to encrypt.
-    key: Numeric key as integer, shorter than 10 digits and containing all digits from 1 to key length.
+    key: Numeric key as integer, shorter than 7 digits and containing all digits from 1 to key length.
     user_state: Current logged-in user or None.
     return: Encrypted text or error message string.
     """
@@ -307,7 +307,7 @@ with gr.Blocks() as app:
 
         #### Frequency Hack  
         The **Frequency Hack** function is used when the key to decrypt a frequency-based audio file is unknown.  
-        It works by trying all possible keys from **2 to 7 length**.
+        It works by trying all possible keys from **0 to 13**.
 
         For each key, the function attempts to decrypt the audio file and checks whether the resulting message is valid **English**.  
         The first valid result is returned along with the key that was used.
