@@ -191,7 +191,7 @@ def decrypt(key, filename):
 
 def hack(filename):
     """
-    Tries all possible keys (1 to 9) to decrypt the audio until English text is found.
+    Tries all possible keys (1 to 13) to decrypt the audio until English text is found.
     Parameters:
     filename (str): Audio file name.
     Returns:
